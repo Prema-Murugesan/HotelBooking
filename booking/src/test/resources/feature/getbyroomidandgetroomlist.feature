@@ -1,8 +1,8 @@
-@Getbyroomid @hotelbookingregression
+@getbyroomid @hotelbookingregression
 Feature: Getting a room summary and roomlist
  
 
-@GetbyroomidPositiveflow 
+@getbyroomidPositiveflow 
 Scenario Outline: Get the details of the room by room id
 	Given user hits endpoint "api/room/","<roomid>"
 	When user asks about the room
@@ -12,7 +12,7 @@ Scenario Outline: Get the details of the room by room id
       |   1    |
       |        |  
 
-@Getbyroomiderror
+@getbyroomiderror
 Scenario Outline: Get the details of the room by incorrect /invalid room id
 	Given user hits endpoint "api/room/","<roomid>"
 	When user asks about the room
@@ -22,7 +22,7 @@ Scenario Outline: Get the details of the room by incorrect /invalid room id
       |   a    |
       |   $    |  
       
-@Getroomlist
+@getroomlist
 Scenario: Get the details of the room by room id
 	Given user hits endpoint "api/room"
 	When user asks about the room

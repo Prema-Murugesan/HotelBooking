@@ -1,7 +1,7 @@
-@Login  @hotelbookingregression
+@login  @hotelbookingregression
 Feature: Login Functionality
    
-    @LoginPositiveflow
+    @loginPositiveflow
     Scenario Outline: Successful login with valid user name and password
     Given user hits endpoint "api/auth/login"
     When user enters "<username>" and "<password>"
@@ -11,7 +11,7 @@ Feature: Login Functionality
       | username | password | 
       | admin | password | 
    
-   @Loginerorrs
+   @loginerorrs
 Scenario Outline: Failed login with invalid/incorrect user name and password
    Given user hits endpoint "api/auth/login"
     When user enters "<username>" and "<password>"
@@ -23,7 +23,7 @@ Scenario Outline: Failed login with invalid/incorrect user name and password
       | admin     | pass   |
       | |password|
       |admin||
-      |#@$@|password|
-      |admin|@#@#$|
+      |@%(|password|
+      |admin|@%(|
 
     

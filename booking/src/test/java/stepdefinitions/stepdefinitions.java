@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import automationLib.requestValues;
-import automationLib.Utilities;
+import automationLib.utilities;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -23,7 +23,7 @@ import io.restassured.response.Response;
 import io.restassured.response.ResponseBodyExtractionOptions;
 import io.restassured.response.ResponseOptions;
 
-public class stepdefinitions extends Utilities{
+public class stepdefinitions extends utilities{
 	    private Response response;
 	    private String username;
 	    private String password;
@@ -49,6 +49,7 @@ public class stepdefinitions extends Utilities{
 
 	    @Then("the response status code should be {int}")
 	    public void the_response_status_code_should_be(Integer code) {
+//	    	System.out.println(response.getStatusCode());
 	    	response.then().statusCode(code);	
 	    }
 	    
@@ -203,6 +204,14 @@ public class stepdefinitions extends Utilities{
 					.param("roomid", roomid)
 					.get(requestValues.getEndPoint());
 	    }
+	    
+	    @When("user asks the details of the room without token by {string}")
+	    public void user_asks_the_details_of_the_room_without_token_by(String roomid) {
+
+	    response = requestSetup().param("roomid", roomid).get(requestValues.getEndPoint());
+	        
+	    }
+
 
 	    @Then("the response status code should be {string}")
 	    public void the_response_status_code_should_be(String code) {
@@ -227,6 +236,12 @@ public class stepdefinitions extends Utilities{
 					.param("checkin", checkin)
 					.param("checkout", checkout)
 					.get(requestValues.getEndPoint());
+	    }
+	    
+	    @When("user requests the room availability details without giving dates")
+	    public void user_requests_the_room_availability_details_without_giving_dates() {
+	        // Write code here that turns the phrase above into concrete actions
+	    	response = requestSetup().get(requestValues.getEndPoint());
 	    }
 	    
 	    @When("user asks for the booking report")
@@ -294,9 +309,35 @@ public class stepdefinitions extends Utilities{
 	 	    		+ "        \"checkout\": \""+checkout+"\"\r\n"
 	 	    		+ "    }\r\n"
 	 	    		+ "}";
-	 	    String Actualep=requestValues.getEndPoint()+Booking;
+	 	    String Actualep=requestValues.getEndPoint()+Bookingid;
 	 	    String value="token="+requestValues.getToken();
 	 	    response = requestSetup().header("Cookie", value).body(body4).put(Actualep);
+		}
+		
+		@When("the user edits the booking details without token {string},{string},{string},{string},{string},{string}")
+		public void the_user_edits_the_booking_details_without_token(String firstname, String lastname, String checkin, String checkout, String roomid,String Bookingid) {
+			int room = Integer.parseInt(roomid);
+	    	requestValues.setFirstname(firstname);
+	    	requestValues.setLastname(lastname);
+	    	requestValues.setCheckin(checkin);
+	    	requestValues.setCheckout(checkout);
+	    	requestValues.setRoomid(room);
+	    	requestValues.setDepositpaid(false);
+	    	int Booking = Integer.parseInt(Bookingid);
+	    	requestValues.setBookingId(Booking);
+	    	 String body4 = "{\r\n"
+	 	    		+ "    \"bookingid\": \""+Booking+"\",\r\n"
+	 	    		+ "    \"roomid\": \""+roomid+"\",\r\n"
+	 	    		+ "    \"firstname\": \""+firstname+"\",\r\n"
+	 	    		+ "    \"lastname\": \""+lastname+"\",\r\n"
+	 	    		+ "    \"depositpaid\": false,\r\n"
+	 	    		+ "    \"bookingdates\": {\r\n"
+	 	    		+ "        \"checkin\": \""+checkin+"\",\r\n"
+	 	    		+ "        \"checkout\": \""+checkout+"\"\r\n"
+	 	    		+ "    }\r\n"
+	 	    		+ "}";
+	 	    String Actualep=requestValues.getEndPoint()+Bookingid;
+	 	    response = requestSetup().body(body4).put(Actualep);
 		}
 		
 		@When("the user deletes the booking with booking ID")
@@ -307,5 +348,19 @@ public class stepdefinitions extends Utilities{
 			    String value="token="+requestValues.getToken();
 			    response = requestSetup().header("Cookie", value).delete(Actualep);
 		}
+		
+		@When("the user deletes the booking with booking ID {string}")
+		public void the_user_deletes_the_booking_with_booking_id(String Bookingid) {
+			String Actualep=requestValues.getEndPoint()+Bookingid;
+		    String value="token="+requestValues.getToken();
+		    response = requestSetup().header("Cookie", value).delete(Actualep);
+		}
+		
+		@When("the user deletes the booking without token using booking ID {string}")
+		public void the_user_deletes_the_booking_without_token_using_booking_id(String Bookingid) {
+			String Actualep=requestValues.getEndPoint()+Bookingid;
+		    response = requestSetup().delete(Actualep);
+		}
+
 		
 }

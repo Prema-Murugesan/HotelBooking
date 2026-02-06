@@ -15,7 +15,7 @@ import io.cucumber.junit.CucumberOptions;
         	    "json:target/cucumber-report.json",// JSON report        	    
         	    },
         monochrome = true,
-        tags = "@DeleteBookingPositiveflow"
+        tags = "@createBookingPositiveflow"
 )
 public class runner {
 	    
