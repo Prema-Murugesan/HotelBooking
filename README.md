@@ -23,7 +23,11 @@
 
 **Installation**
 ----------------------------------------------------------------------------------------
-Clone the repository: git clone https://github.com/Prema-Murugesan/HotelBooking.git
+Download the "booking.zip" file from repository: https://github.com/Prema-Murugesan/HotelBooking.git  
+Extract the file in local  
+Go to Eclipse->File-> Import->Maven->Existing Maven Project->click Next Button  
+Click Browse button to get the location of downloaded and extracted project  
+Click Finish button
 
 **How to Run the Tests**
 -----------------------------------------------------------------------------------------
