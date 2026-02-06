@@ -19,7 +19,7 @@ import io.restassured.specification.RequestSpecification;
 
 public class Utilities {
 	
-	protected  requestValues requestValues = new requestValues();
+	protected  RequestValues requestValues = new RequestValues();
 	String apiurl="https://automationintesting.online/";
 	private static FileInputStream input;
 	private static Properties prop = null;
