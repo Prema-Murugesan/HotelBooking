@@ -1,14 +1,12 @@
 @getCheckAvailablity @hotelBookingRegression
 Feature: Checking Availablity
- 
 
 	@getCheckAvailablityPositiveflow
 	Scenario Outline: Get the availability of the room from dates
 		Given user hits endpoint "api/room"
 		When user requests the room availability details from "<checkin>" to "<checkout>" dates
 		Then the response status code should be 200
-	
-	 	Examples:
+		Examples:
       		| checkin    | checkout   |
       		| 2026-02-15 | 2026-02-17 |
       		|            | 2025-02-21 |
