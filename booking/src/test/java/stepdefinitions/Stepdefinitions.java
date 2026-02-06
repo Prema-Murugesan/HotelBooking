@@ -1,12 +1,18 @@
 package stepdefinitions;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.testng.Assert.assertEquals;
+
 import java.util.List;
 import java.util.Map;
 import org.json.JSONObject;
 import org.testng.AssertJUnit;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import static org.hamcrest.Matchers.*;
+
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -92,6 +98,7 @@ public class Stepdefinitions extends Utilities{
 			String responseLastname = response.jsonPath().getString("lastname");
 			String responseCheckin = response.jsonPath().getString("bookingdates.checkin");
 			String responseCheckout = response.jsonPath().getString("bookingdates.checkout");
+			
 			if(responseFirstname.equals(firstname))
 			{
 				System.out.println("First Name matched");
@@ -154,6 +161,7 @@ public class Stepdefinitions extends Utilities{
 			String responseLastname = response.jsonPath().getString("lastname");
 			String responseCheckin = response.jsonPath().getString("bookingdates.checkin");
 			String responseCheckout = response.jsonPath().getString("bookingdates.checkout");
+			
 			if(responseFirstname.equals(firstname))
 			{
 				System.out.println("First Name matched");
@@ -180,8 +188,21 @@ public class Stepdefinitions extends Utilities{
 
 	    @Then("the user should get response with {string}")
 	    public void the_user_should_get_response_with(String errorMessage) {
-	    	List<String> actualErrorMessage = response.jsonPath().getList("errors");
-			assertEquals("Error message mismatch", errorMessage, actualErrorMessage.get(0));  
+	    	
+	    	if(errorMessage.contains(","))
+	    	{
+	    		String[] errorMessagearr = errorMessage.split(",");
+	    		List<String> actualErrorMessage = response.jsonPath().getList("errors");
+	    		List<String> expectedErrors = Arrays.asList(errorMessagearr);
+		    	assertTrue(actualErrorMessage.size() == expectedErrors.size());
+		    	assertTrue(actualErrorMessage.containsAll(expectedErrors));
+	    	}
+	    	else
+	    	{
+	    		String actualMessage = response.jsonPath().getString("errors[0]");
+	    		assertEquals(errorMessage, actualMessage);
+	    	}
+	    	
 	}
 	    
 	    

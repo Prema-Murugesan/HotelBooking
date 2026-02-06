@@ -15,7 +15,7 @@ import io.cucumber.junit.CucumberOptions;
         	    "json:src/test/resources/cucumber-report.json",// JSON report        	    
         	    },
         monochrome = true,
-        tags = "@createBookingPositiveflow"
+        tags = "@hotelBookingRegression"
 )
 public class Runner {
 	    
