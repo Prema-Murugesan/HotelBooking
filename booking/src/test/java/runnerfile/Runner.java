@@ -17,6 +17,6 @@ import io.cucumber.junit.CucumberOptions;
         monochrome = true,
         tags = "@createBookingPositiveflow"
 )
-public class runner {
+public class Runner {
 	    
 }
