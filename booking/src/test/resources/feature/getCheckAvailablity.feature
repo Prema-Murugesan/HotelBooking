@@ -24,8 +24,7 @@ Feature: Checking Availablity
 		Given user hits endpoint "api/room"
 		When user requests the room availability details from "<checkin>" to "<checkout>" dates
 		Then the response status code should be 500
-	
-	 	Examples:
+        Examples:
       		| checkin    | checkout   |
       		| 2026-      | 2026-02-17 |
       		| 2026-02-20 | -02-21     | 
