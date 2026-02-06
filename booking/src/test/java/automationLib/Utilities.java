@@ -12,14 +12,14 @@ import org.json.JSONObject;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import automationLib.requestValues;
+import automationLib.RequestValues;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
-public class utilities {
+public class Utilities {
 	
-	protected  requestValues requestValues = new requestValues();
+	protected  RequestValues requestValues = new RequestValues();
 	String apiurl="https://automationintesting.online/";
 	private static FileInputStream input;
 	private static Properties prop = null;

@@ -10,8 +10,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import java.util.HashMap;
 import java.util.Map;
 
-import automationLib.requestValues;
-import automationLib.utilities;
+import automationLib.RequestValues;
+import automationLib.Utilities;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -23,7 +23,7 @@ import io.restassured.response.Response;
 import io.restassured.response.ResponseBodyExtractionOptions;
 import io.restassured.response.ResponseOptions;
 
-public class stepdefinitions extends utilities{
+public class Stepdefinitions extends Utilities{
 	    private Response response;
 	    private String username;
 	    private String password;

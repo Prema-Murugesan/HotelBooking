@@ -1,7 +1,7 @@
 package automationLib;
 
 
-public class requestValues {
+public class RequestValues {
 	private int roomid;
     private String firstname;
     private String lastname;

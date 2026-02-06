@@ -11,12 +11,12 @@ import io.cucumber.junit.CucumberOptions;
         glue = {"stepdefinitions"}, dryRun=false,
         plugin = {"pretty", // pretty-printed logs in console
         	    "summary", // clean summary at the end
-        	    "html:target/cucumber-report.html", // HTML report
-        	    "json:target/cucumber-report.json",// JSON report        	    
+        	    "html:src/test/resources/cucumber-report.html", // HTML report
+        	    "json:src/test/resources/cucumber-report.json",// JSON report        	    
         	    },
         monochrome = true,
         tags = "@createBookingPositiveflow"
 )
-public class runner {
+public class Runner {
 	    
 }
