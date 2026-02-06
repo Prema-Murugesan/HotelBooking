@@ -39,4 +39,8 @@ Feature: Getting a room summary
 		Then the response status code should be "<code>"
 		Examples:
       		| roomid | code |
+<<<<<<< HEAD
       		|   1    | 401  |
+=======
+      		|   1    | 401  |
+>>>>>>> 57d923391696e1dfcc5aa99514298bceaf2b372b

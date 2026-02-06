@@ -65,6 +65,10 @@ Feature: Edit the booking
      	Examples:  
      		| firstname | lastname |  checkin    | checkout   | roomid | bookingid|
      		| sDf       | kjh      |  2026-03-16 | 2026-03-17 | 2      |    4     |
+<<<<<<< HEAD
+=======
+      
+>>>>>>> 57d923391696e1dfcc5aa99514298bceaf2b372b
       
       
       

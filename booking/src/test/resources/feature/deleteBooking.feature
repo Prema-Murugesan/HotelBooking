@@ -36,4 +36,8 @@ Feature: Delete booking
     	Given user hits endpoint "api/booking/"
 		When the user deletes the booking without token using booking ID "1" 
 		Then the response status code should be 401   
+<<<<<<< HEAD
 	 
+=======
+	 
+>>>>>>> 57d923391696e1dfcc5aa99514298bceaf2b372b

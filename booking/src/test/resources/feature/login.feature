@@ -24,4 +24,8 @@ Feature: Login Functionality
          | @%(      | password |
          | admin    | @%(      |
 
+<<<<<<< HEAD
     
+=======
+    
+>>>>>>> 57d923391696e1dfcc5aa99514298bceaf2b372b

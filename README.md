@@ -23,11 +23,16 @@
 
 **Installation**
 ----------------------------------------------------------------------------------------
-Clone the repository: git clone https://github.com/Prema-Murugesan/HotelBooking.git
+Download the "booking.zip" file from repository: https://github.com/Prema-Murugesan/HotelBooking.git  
+Extract the file in local  
+Go to Eclipse->File-> Import->Maven->Existing Maven Project->click Next Button  
+Click Browse button to get the location of downloaded and extracted project  
+Click Finish button
 
 **How to Run the Tests**
 -----------------------------------------------------------------------------------------
 
 *To execute the tests go to runner.class(src/test/java/runnerfile/runner.java)  
-*we can use different tags:@CreateBooking , @GetbookingReport , @EditBooking  , @DeleteBooking  
-*After Executing to see the report go to target folder and open "cucumber-report.html" in web browser 
+*we can use different tags:@CreateBooking , @GetbookingReport , @EditBooking  , @DeleteBooking  ,@hotelBookingRegression  
+*After Executing to see the report go to "src/test/resources" folder and open "cucumber-report.html" in web browser  
+**NOTE:**There are sample files available in the same location.

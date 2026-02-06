@@ -20,4 +20,8 @@ Feature: Get booking Report
 	Scenario: Error scenario to check authorization passing empty token
 		Given user hits endpoint "api/report"
 		When user asks for the booking report
+<<<<<<< HEAD
 		Then the response status code should be 500
+=======
+		Then the response status code should be 500
+>>>>>>> 57d923391696e1dfcc5aa99514298bceaf2b372b
