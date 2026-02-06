@@ -17,7 +17,7 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
-public class Utilities {
+public class utilities {
 	
 	protected  requestValues requestValues = new requestValues();
 	String apiurl="https://automationintesting.online/";
