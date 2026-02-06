@@ -1,4 +1,4 @@
- @login  @hotelBookingRegression
+@login  @hotelBookingRegression
 Feature: Login Functionality
    
    @loginPositiveflow
@@ -6,7 +6,6 @@ Feature: Login Functionality
       Given user hits endpoint "api/auth/login"
       When user enters "<username>" and "<password>"
       Then the response status code should be 200
-
       Examples:
          | username | password | 
          | admin    | password | 
@@ -16,7 +15,6 @@ Feature: Login Functionality
       Given user hits endpoint "api/auth/login"
       When user enters "<username>" and "<password>"
       Then the response status code should be 401
-
       Examples:
          | username | password | 
          | ad       | password | 
