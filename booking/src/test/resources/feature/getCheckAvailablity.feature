@@ -9,11 +9,11 @@ Feature: Checking Availablity
 		Then the response status code should be 200
 	
 	 	Examples:
-      	| checkin    | checkout   |
-      	| 2026-02-15 | 2026-02-17 |
-      	|            | 2025-02-21 |
-       	| 2026-02-15 |            |
-       	|            |            |
+      		| checkin    | checkout   |
+      		| 2026-02-15 | 2026-02-17 |
+      		|            | 2025-02-21 |
+       		| 2026-02-15 |            |
+       		|            |            |
 	
 	@getCheckAvailablityPositiveflow
 	Scenario: Get the availability of the room without giving dates
@@ -28,9 +28,9 @@ Feature: Checking Availablity
 		Then the response status code should be 500
 	
 	 	Examples:
-      	| checkin    | checkout   |
-      	| 2026-      | 2026-02-17 |
-      	| 2026-02-20 | -02-21     | 
-      	| 2026-50-20 | 2026-02-17 | 
-      	| 2026-02-15 | 2026-02-45 |
+      		| checkin    | checkout   |
+      		| 2026-      | 2026-02-17 |
+      		| 2026-02-20 | -02-21     | 
+      		| 2026-50-20 | 2026-02-17 | 
+      		| 2026-02-15 | 2026-02-45 |
       
