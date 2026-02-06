@@ -1,4 +1,4 @@
-@login  @hotelBookingRegression
+ @login  @hotelBookingRegression
 Feature: Login Functionality
    
    @loginPositiveflow
@@ -7,9 +7,9 @@ Feature: Login Functionality
       When user enters "<username>" and "<password>"
       Then the response status code should be 200
 
-    Examples:
-      | username | password | 
-      | admin    | password | 
+      Examples:
+         | username | password | 
+         | admin    | password | 
    
    @loginError
    Scenario Outline: Failed login with invalid/incorrect user name and password
@@ -17,13 +17,13 @@ Feature: Login Functionality
       When user enters "<username>" and "<password>"
       Then the response status code should be 401
 
-    Examples:
-      | username | password | 
-      | ad       | password | 
-      | admin    | pass     |
-      |          | password |
-      | admin    |          |
-      | @%(      | password |
-      | admin    | @%(      |
+      Examples:
+         | username | password | 
+         | ad       | password | 
+         | admin    | pass     |
+         |          | password |
+         | admin    |          |
+         | @%(      | password |
+         | admin    | @%(      |
 
     
