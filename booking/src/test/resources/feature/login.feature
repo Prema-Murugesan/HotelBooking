@@ -21,9 +21,9 @@ Feature: Login Functionality
       | username | password | 
       | ad       | password | 
       | admin    | pass     |
-      |          |password  |
-      |admin     |          |
-      |@%(       |password  |
-      |admin     |@%(       |
+      |          | password |
+      | admin    |          |
+      | @%(      | password |
+      | admin    | @%(      |
 
     
