@@ -45,8 +45,8 @@ Feature: Edit the booking
     	When the user edits the booking details "<firstname>","<lastname>","<checkin>","<checkout>","<roomid>","<bookingid>"
     	Then the response status code should be 404
      	Examples:  
-     	| firstname | lastname |  checkin    | checkout   | roomid | bookingid|
-        |sDf        | kjh      |  2026-03-16 | 2026-03-17 | 2      |    4     |
+     		| firstname | lastname |  checkin    | checkout   | roomid | bookingid|
+        	|sDf        | kjh      |  2026-03-16 | 2026-03-17 | 2      |    4     |
     
 	@editBookingError
 	Scenario Outline:  Error scenario to check authorization passing empty token
