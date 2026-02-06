@@ -18,18 +18,16 @@ Feature: Getting a room summary
 		Given user hits endpoint "api/booking"
 		When user asks the details of the room by "<roomid>"
 		Then the response status code should be "<code>"
-	
-	Examples:
-      | roomid | code|
-      |        | 400 |
-      |    a   | 500 | 
+        Examples:
+        	| roomid | code|
+      		|        | 400 |
+      		|    a   | 500 | 
       
 @getRoomSummaryError @getBookingDetailsByRoomidError
 Scenario Outline: Error scenario to check authorization passing empty token
 	Given user hits endpoint "api/booking"
 	When user asks the details of the room by "<roomid>"
 	Then the response status code should be "<code>"
-	
 	Examples:
       | roomid | code|
       |   1    | 500 |
@@ -39,7 +37,6 @@ Scenario Outline: Error scenario to check authorization passing empty token
 	Given user hits endpoint "api/booking"
 	When user asks the details of the room without token by "<roomid>"
 	Then the response status code should be "<code>"
-	
 	Examples:
       | roomid | code |
       |   1    | 401  |
