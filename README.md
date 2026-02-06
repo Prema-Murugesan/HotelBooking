@@ -30,5 +30,5 @@ Clone the repository: git clone https://github.com/Prema-Murugesan/HotelBooking.
 
 *To execute the tests go to runner.class(src/test/java/runnerfile/runner.java)  
 *we can use different tags:@CreateBooking , @GetbookingReport , @EditBooking  , @DeleteBooking  
-*After Executing to see the report go to "src/test/resources" folder and open "cucumber-report.html" in web browser 
-There are sample files available in the same location.
+*After Executing to see the report go to "src/test/resources" folder and open "cucumber-report.html" in web browser  
+**NOTE:**There are sample files available in the same location.
