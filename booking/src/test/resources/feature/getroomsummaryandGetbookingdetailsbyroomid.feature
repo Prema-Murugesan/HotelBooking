@@ -21,8 +21,8 @@ Feature: Getting a room summary
 	
 	Examples:
       | roomid | code|
-      |        |  400|
-      |    a   |  500| 
+      |        | 400 |
+      | a      | 500 | 
       
 @getRoomSummaryError @getBookingDetailsByRoomidError
 Scenario Outline: Error scenario to check authorization passing empty token
@@ -32,7 +32,7 @@ Scenario Outline: Error scenario to check authorization passing empty token
 	
 	Examples:
       | roomid | code|
-      |   1    |  500|
+      | 1      | 500 |
       
  @getRoomSummaryError @getBookingDetailsByRoomidError
 Scenario Outline: Error scenario to check authorization passing empty token
@@ -41,5 +41,5 @@ Scenario Outline: Error scenario to check authorization passing empty token
 	Then the response status code should be "<code>"
 	
 	Examples:
-      | roomid | code|
-      |   1    |  401|
+      | roomid | code |
+      | 1      | 401  |
