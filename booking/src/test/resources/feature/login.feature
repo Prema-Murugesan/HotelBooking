@@ -1,4 +1,4 @@
-@login  @hotelbookingregression
+@login  @hotelBookingRegression
 Feature: Login Functionality
    
    @loginPositiveflow
