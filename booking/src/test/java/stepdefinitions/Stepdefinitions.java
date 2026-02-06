@@ -23,7 +23,7 @@ import io.restassured.response.Response;
 import io.restassured.response.ResponseBodyExtractionOptions;
 import io.restassured.response.ResponseOptions;
 
-public class stepdefinitions extends utilities{
+public class Stepdefinitions extends Utilities{
 	    private Response response;
 	    private String username;
 	    private String password;
