@@ -46,7 +46,7 @@ Feature: Edit the booking
     	Then the response status code should be 404
      	Examples:  
      		| firstname | lastname |  checkin    | checkout   | roomid | bookingid|
-        	|sDf        | kjh      |  2026-03-16 | 2026-03-17 | 2      |    4     |
+        	| sDf       | kjh      |  2026-03-16 | 2026-03-17 | 2      |    4     |
     
 	@editBookingError
 	Scenario Outline:  Error scenario to check authorization passing empty token
